@@ -14,6 +14,9 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.model.Category;
+import com.niit.model.Product;
+import com.niit.model.Supplier;
+import com.niit.model.UserInfo;
 
 @Configuration
 @EnableTransactionManagement
@@ -53,6 +56,10 @@ public class Config
 		factory.addProperties(hibernateProp);
         
         factory.addAnnotatedClass(Category.class);
+        factory.addAnnotatedClass(Supplier.class);
+        factory.addAnnotatedClass(Product.class);
+        factory.addAnnotatedClass(UserInfo.class);
+        
         
         System.out.println("---SessionFactory object created----");
         
