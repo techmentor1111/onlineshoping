@@ -1,5 +1,6 @@
 package com.niit.testcases;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.BeforeClass;
@@ -32,8 +33,8 @@ public class CategoryUnitTest {
 	public void addCategoryTest()
 	{
 		Category category=new Category();
-		category.setCategoryName("Men Dresses");
-		category.setCategoryDesc("Ethnic wear for Men");
+		category.setCategoryName("Women Dresses");
+		category.setCategoryDesc("Ethnic wear for WoMen");
 		
 		assertTrue("Problem in adding the category",categoryDao.addCategory(category));
 	}
@@ -49,7 +50,7 @@ public class CategoryUnitTest {
 		assertTrue("Problem in deleting category",categoryDao.deleteCategory(category));
 	}
 	
-	//@Ignore
+	@Ignore
 	@Test
 	public void updateCategoryTest()
 	{
@@ -58,6 +59,11 @@ public class CategoryUnitTest {
 		
 		assertTrue("Problem in updating category",categoryDao.updateCategory(category));
 	}
+	//@Ignore
+	@Test
+	public void listAllCategoryTestCase() {
+	int actualSize = categoryDao.listCategories().size();
+	assertEquals(3, actualSize);
+	}
 
-	
 }
