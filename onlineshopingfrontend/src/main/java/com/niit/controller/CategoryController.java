@@ -51,8 +51,14 @@ public class CategoryController {
 		Category category=categoryDao.getCategoryById(categoryID);
 		categoryDao.deleteCategory(category);
 		
+		List<Category> listCategories=categoryDao.listCategories();
+		m.addAttribute("listCategories", listCategories);
+		
 		m.addAttribute("pageinfo","Manage Category");
 		return "Category";
+		
+		//m.addAttribute("pageinfo","Manage Category");
+		//return "Category";
 	}
 		@RequestMapping(value="/UpdateCategory",method=RequestMethod.POST)
 	public String updateCategory(Model m,@RequestParam("cID")int categoryID,@RequestParam("cName")String categoryName,@RequestParam("cDesc")String categoryDesc)
