@@ -26,6 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.dao.CategoryDao;
 import com.niit.dao.ProductDao;
+import com.niit.dao.SupplierDao;
 import com.niit.model.Category;
 import com.niit.model.Product;
 
@@ -34,6 +35,8 @@ public class ProductController {
 	@Autowired
 	CategoryDao categoryDao;
 	
+	@Autowired
+	SupplierDao supplierDao;
 	@Autowired
     ProductDao productDao;
 
@@ -116,7 +119,7 @@ public class ProductController {
 	@RequestMapping(value="/deleteProduct/{proId}")
 	public String deleteProduct(Model m,@PathVariable("proId")int proId)
 	{
-		Product product=productDao.getProduct(proId);
+		Product product=productDao.getProductById(proId);
 		productDao.deleteProduct(product);
 		
 		Product product1=new Product();
@@ -125,6 +128,7 @@ public class ProductController {
 		m.addAttribute("pageinfo","Manage product");
 		m.addAttribute("categoryList",this.getCategories());
 		
+		//m.addAttribute("supplierList",this.listSuppliers());
 		List<Product> listProducts=productDao.listProducts();
 		m.addAttribute("productList", listProducts);
 
@@ -134,7 +138,7 @@ public class ProductController {
 	@RequestMapping(value="/editProduct/{proId}")
 	public String editProduct(Model m,@PathVariable("proId")int proId)
 	{
-		Product product=productDao.getProduct(proId);
+		Product product=productDao.getProductById(proId);
 		
 		m.addAttribute(product);
 		m.addAttribute("pageinfo","Manage Product");
@@ -159,7 +163,7 @@ public class ProductController {
 	public String productDetailDisplay(@PathVariable("proId")int proId,Model m)
 	{
 		m.addAttribute("pageinfo","Product Info");
-		Product product=productDao.getProduct(proId);
+		Product product=productDao.getProductById(proId);
 		
 		m.addAttribute("product",product);	
 		return "ProductDetailDisplay";

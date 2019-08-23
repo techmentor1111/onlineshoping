@@ -27,7 +27,7 @@ public class ProductUnitTestcase {
 	    productDao=(ProductDao) context.getBean("productDao");
 	}
 	
-	//@Ignore
+	@Ignore
 	@Test
 	public void addProductTest()
 	{

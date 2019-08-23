@@ -47,7 +47,7 @@
     <tr class="active">
       <td>${supplier.supplierId}</td>
       <td>${supplier.supplierName}</td>
-      <td>${supplier.supplierDesc}</td>
+      <td>${supplier.supplierAddress}</td>
       <td>
          <a href="<c:url value="/editSupplier/${supplier.supplierId}"/>"class="btn btn-success">Edit</a>/
          <a href="<c:url value="/deleteSupplier/${supplier.supplierId}"/>"class="btn btn-danger">Delete</a>

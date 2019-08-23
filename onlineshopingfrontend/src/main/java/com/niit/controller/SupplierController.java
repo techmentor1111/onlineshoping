@@ -34,11 +34,11 @@ public class SupplierController
 		return "Supplier";
 	}
 	@RequestMapping(value="/AddSupplier",method=RequestMethod.POST)
-	public String addSupplier(Model m,@RequestParam("sName")String supplierName,@RequestParam("sDesc")String supplierDesc)
+	public String addSupplier(Model m,@RequestParam("sName")String supplierName,@RequestParam("sDesc")String supplierAddress)
 	{
 		Supplier supplier=new Supplier();
 		supplier.setSupplierName(supplierName);
-		supplier.setSupplierDesc(supplierDesc);
+		supplier.setSupplierAddress(supplierAddress);
 		supplierDao.addSupplier(supplier);
 		
 		List<Supplier> listSuppliers=supplierDao.listSuppliers();
@@ -51,18 +51,23 @@ public class SupplierController
 	@RequestMapping(value="/deleteSupplier/{supplierId}")
 	public String deleteSupplier(Model m,@PathVariable("supplierId")int supplierId)
 	{
-		Supplier supplier=supplierDao.getSupplier(supplierId);
+		Supplier supplier=supplierDao.getSupplierById(supplierId);
 		supplierDao.deleteSupplier(supplier);
+		
+		
+		List<Supplier> listSuppliers=supplierDao.listSuppliers();
+		m.addAttribute("listSuppliers", listSuppliers);
 		
 		m.addAttribute("pageinfo","Manage Supplier");
 		return "Supplier";
+
 	}
 		@RequestMapping(value="/UpdateSupplier",method=RequestMethod.POST)
-	public String updateSupplier(Model m,@RequestParam("sId")int supplierId,@RequestParam("sName")String supplierName,@RequestParam("sDesc")String supplierDesc)
+	public String updateSupplier(Model m,@RequestParam("sId")int supplierId,@RequestParam("sName")String supplierName,@RequestParam("sDesc")String supplierAddress)
 	{
-		Supplier supplier=supplierDao.getSupplier(supplierId);
+		Supplier supplier=supplierDao.getSupplierById(supplierId);
 		supplier.setSupplierName(supplierName);
-		supplier.setSupplierDesc(supplierDesc);
+		supplier.setSupplierAddress(supplierAddress);
 		supplierDao.updateSupplier(supplier);
 		
 		List<Supplier> listSuppliers=supplierDao.listSuppliers();
@@ -74,7 +79,7 @@ public class SupplierController
 		@RequestMapping(value="/editSupplier/{supplierId}")
 		public String editSupplier(Model m,@PathVariable("supplierId")int supplierId)
 		{
-			Supplier supplier=supplierDao.getSupplier(supplierId);
+			Supplier supplier=supplierDao.getSupplierById(supplierId);
 			
 			m.addAttribute("supplier",supplier);
 			m.addAttribute("pageinfo","Manage Supplier");

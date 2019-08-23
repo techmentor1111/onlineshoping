@@ -28,7 +28,7 @@ public class UserInfoUnitTestcase {
 	    userDao=(UserDao) context.getBean("userDao");
 	}
 	
-	//@Ignore
+	@Ignore
 	@Test
 	public void addUserInfoTest()
 	{

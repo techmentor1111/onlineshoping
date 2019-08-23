@@ -59,7 +59,7 @@ public class CategoryUnitTest {
 		
 		assertTrue("Problem in updating category",categoryDao.updateCategory(category));
 	}
-	//@Ignore
+	@Ignore
 	@Test
 	public void listAllCategoryTestCase() {
 	int actualSize = categoryDao.listCategories().size();

@@ -1,0 +1,5 @@
+com\niit\controller\SupplierController.class
+com\niit\controller\UserController.class
+com\niit\controller\ProductController.class
+com\niit\controller\CategoryController.class
+com\niit\controller\PageController.class

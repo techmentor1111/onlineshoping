@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -17,21 +16,24 @@
 
 
 <nav class="navbar navbar-inverse">
-
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">eshop</a>
  </div>
+ 
     <ul class="nav navbar-nav"> 
       <li><a href="<c:url value="/home"/>">HOME</a></li>
       <li><a href="<c:url value="/login"/>">LOGIN</a></li>
       <li><a href="<c:url value="/register"/>">REGISTER</a></li>
       <li><a href="<c:url value="/contactus"/>">CONTACTUS</a></li>
       <li><a href="<c:url value="/aboutus"/>">ABOUTUS</a></li>
-         <li><a href="<c:url value="/category"/>">Manage Category</a></li>
+      <li><a href="<c:url value="/product"/>">Manage Product</a></li>
+      <li><a href="<c:url value="/category"/>">Manage Category</a></li>
+      <li><a href="<c:url value="/supplier"/>">Manage Supplier</a></li>
      </ul>
+    
  
-</nav>
-
+ </div>
+ </nav>
 </body>
 </html>
