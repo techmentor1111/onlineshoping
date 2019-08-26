@@ -7,7 +7,6 @@ import com.niit.model.UserInfo;
 public interface UserDao {
 
 	   public boolean addUser(UserInfo userInfo);
-	   public boolean deleteUser(UserInfo userInfo);
-	   public boolean updateUser(UserInfo userInfo);
-	   public UserInfo getUserById(int userID);
+	    public boolean updateAddress(UserInfo user);
+		public UserInfo getUser(String username);
 }

@@ -48,7 +48,9 @@
          </tr>
          <tr class="active">
              <td>Supplier</td>
-             <td><form:input path="supplierId"/></td>
+             <td>
+             <form:input path="supplierId"/>
+             </td>
           </tr>
           <tr class="active">
              <td>Image</td>

@@ -46,23 +46,7 @@ public class UserInfoUnitTestcase {
 
 
 	
-	@Ignore
-	@Test
-	public void deleteUserInfoTest()
-	{
-		UserInfo userInfo=userDao.getUserById(1);
-		
-		assertTrue("Problem in deleting userInfo",userDao.deleteUser(userInfo));
-	}
 	
-	@Ignore
-	@Test
-	public void updateUserInfoTest()
-	{
-		UserInfo userInfo=userDao.getUserById(2);
-		
-		assertTrue("Problem in updating userInfo",userDao.updateUser(userInfo));
-	}
 
 
 }

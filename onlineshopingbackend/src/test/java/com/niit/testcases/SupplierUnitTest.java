@@ -12,7 +12,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.niit.dao.SupplierDao;
 import com.niit.model.Supplier;
 
-public class SupplierUnitTest {
+public class SupplierUnitTest 
+{
 
 	@Autowired
 	static SupplierDao supplierDao;

@@ -25,7 +25,7 @@ public class OrderDetailsTestcase {
 		    orderDao=(OrderDao) context.getBean("orderDao");
 	    }
 	   
-	    @Ignore
+	   @Ignore
 		@Test
 		public void saveOrdertest() 
 		{
@@ -36,11 +36,11 @@ public class OrderDetailsTestcase {
 			orderDetail.setShippingAddr("Mumbai");
 			orderDetail.setFinalAmount(2000);
 			orderDetail.setTranType("COD");
-			orderDetail.setUsername("Lucky");
+			orderDetail.setUsername("rahul");
 			
 			assertTrue("Problem in saving order",orderDao.saveOrder(orderDetail));
 		}
-		
+	   @Ignore
 		@Test
 		public void updateCartTest()
 		{

@@ -49,11 +49,7 @@
          <tr class="active">
              <td>Supplier</td>
              <td>
-             <form:select path="supplierId">
-      				<form:option value="0" label="---Select from the List---"/>
-                   <form:options items="${supplierList}"/>
-              </form:select>
-             
+             <form:input path="supplierId"/>
              </td>
           </tr>
           <tr class="active">

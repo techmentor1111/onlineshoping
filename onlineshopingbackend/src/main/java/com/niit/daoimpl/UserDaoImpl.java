@@ -19,55 +19,39 @@ public class UserDaoImpl implements UserDao
 {
 	@Autowired
     SessionFactory sessionFactory;
-	
-	public boolean addUser(UserInfo userInfo) {
-
-		  try
-	        {
-	        sessionFactory.getCurrentSession().save(userInfo);
-	        return true;
-	        }
-	        catch(Exception e)
-	        {
-	        return false;
-		}
-		  
-	}
-
-	public boolean deleteUser(UserInfo userInfo) {
-
-		try
+    
+	public boolean addUser(UserInfo user) 
+    {
+    	try
         {
-        sessionFactory.getCurrentSession().delete(userInfo);
-        return true;
-        }
-        catch(Exception e)
-        {
-        return false;
-        }
-
-	}
-
-	public boolean updateUser(UserInfo userInfo) {
-
-		try
-        {
-        sessionFactory.getCurrentSession().update(userInfo);
+        sessionFactory.getCurrentSession().save(user);
         return true;
         }
         catch(Exception e)
         {
         return false;
 	}
+}
 
+	public boolean updateAddress(UserInfo user) {
+		try
+        {
+        sessionFactory.getCurrentSession().update(user);
+        return true;
+        }
+        catch(Exception e)
+        {
+        return false;
+        }
+}
+
+	public UserInfo getUser(String username) {
+		{
+		    Session session=sessionFactory.openSession();
+	        UserInfo user=session.get(UserInfo.class,username); 
+	        session.close();
+			return user;
 	}
-
-	public UserInfo getUserById(int userID) 
-	{
-		 Session session=sessionFactory.openSession();
-	        UserInfo userInfo=session.get(UserInfo.class,userID);        
-			return userInfo;
-	}
-
+}
 
 }

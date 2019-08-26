@@ -32,12 +32,12 @@ static CartDao cartDao;
 	public void addCartItemtest() 
 	{
 		CartItem cartItem=new CartItem();
-		cartItem.setProId(417);
-		cartItem.setProName("Brown Bag");
+		cartItem.setProId(36);
+		cartItem.setProName("women");
 		cartItem.setQuantity(2);
 		cartItem.setProprice(2000);
 		cartItem.setPaymentStatus("NP");
-		cartItem.setUsername("Lucky");
+		cartItem.setUsername("rahul");
 		
 		assertTrue("problem in adding Item into Cart",cartDao.addCartItem(cartItem));
 	}
